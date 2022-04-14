@@ -1,11 +1,13 @@
 ({
   doInit: function(component, event, helper) {
+
     try {
       helper.callToServer(component, "c.findAccountsForMap", function(response){
         let markers = [];
         for (var i = 0; i < response.length; i++) {
           let accountInfo = response[i];
           let completeAddress = [];
+          
           // if(accountInfo.BillingCity){
           //     completeAddress.push(accountInfo.BillingCity);
           //  }if(accountInfo.BillingState){

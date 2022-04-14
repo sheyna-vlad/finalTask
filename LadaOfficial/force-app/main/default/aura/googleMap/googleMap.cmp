@@ -6,6 +6,7 @@
   <aura:attribute name="markersTitle" type="String"  />
 
   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  
   <aura:if isTrue="{!!empty(v.mapMarkers)}">
     <lightning:map
       mapMarkers="{!v.mapMarkers }"
@@ -14,4 +15,6 @@
       center="{!v.center}"
     />
   </aura:if>
+
+  <c:child name='v.mapMarkers'/>
 </aura:component>
