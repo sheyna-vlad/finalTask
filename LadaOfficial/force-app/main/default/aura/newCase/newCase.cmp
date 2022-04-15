@@ -5,11 +5,8 @@
   <aura:attribute
     name="newCase"
     type="Case"
-    default="{ 'sobjectType': 'Case',
+    default="{ 
                      'Subject': '',
-                     'Origin': '',
-                     'Status': 'New',
-                     'ContactId': '',
 					 'SuppliedEmail':'',
              		 'Description':''
                    }"
@@ -33,32 +30,19 @@
           aura:id="subject"
           label="Subject"
           name="Subject"
-          value="{!v.newCase.Subject}"
+          
           required="true"
         />
         <!-- Origin -->
-        <lightning:select aura:id="origin" name="Origin" label="What type of Case?" required="true">
-            <option value="">choose one...</option>
-        	<option value="Phone">Phone</option>
-        	<option value="Email">Email</option>
-        	<option value="Web">Web</option>
-    	</lightning:select>
+       
         <!-- Status=New ?????????????????????????????????????????-->
        
         <!--Contact Name-->
-        <lightning:input
-          aura:id="сontact"
-          label="Contact"
-          name="ContactId"
-          placeholder="type your name here..."
-          value="{!v.newCase.ContactId}"
-        />
         <!-- Email -->
         <lightning:input
           aura:id="email"
           type="Email"
           name="Email"
-          value="{!v.newCase.SuppliedEmail}"
           placeholder="youraddress@company.com"
           label="Email"
         />      
@@ -67,7 +51,6 @@
           name="Description"
 		  label="Description"
 		  placeholder="type here description..."
-          value="{!v.newCase.Description}"
         />
          <lightning:button
           label="Create Case"
@@ -79,5 +62,6 @@
       <!-- / CREATE NEW EXPENSE FORM -->
 	</fieldset>
     <!-- / BOXED AREA -->
+      
   </div>
 </aura:component>
